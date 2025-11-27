@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRANDA - Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+  body {background: linear-gradient(135deg,#f5f5f5,#eaeaea); overflow-x:hidden;}
+
+  header {
+    position:relative;
+    background:#cacaca;
+    color:#fff;
+    padding:60px 20px;
+    text-align:center;
+    border-bottom:4px solid #000;
+    border-radius:0 0 40px 40px;
+  }
+  header h1 {font-size:50px; font-weight:800; letter-spacing:4px; margin-bottom:10px; color:#000; text-shadow:2px 2px #555;}
+  header p {font-size:18px; color:#555; margin-bottom:20px;}
+
+  .logo-container {display:flex; justify-content:center; align-items:center; margin-bottom:25px;}
+  .logo-container img {
+    width:130px; height:130px; border-radius:20%; object-fit:contain;
+    box-shadow:0 4px 20px rgba(0,0,0,0.25); transform: rotate(-5deg);
+    transition: all 0.4s ease;
+  }
+  .logo-container img:hover {transform: rotate(5deg) scale(1.05);}
+
+  main {padding:50px 20px; max-width:900px; margin:auto;}
+  .grid {display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+  .card {
+    background: linear-gradient(145deg, #ffffff, #e0e0e0);
+    padding:30px; border-radius:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    transition: all 0.4s ease; border:3px dashed #000;
+  }
+  .card:hover {
+    transform:translateY(-10px) rotate(-2deg);
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
+  }
+  .card h2 {font-weight:700; margin-bottom:15px; font-size:22px; color:#000;}
+  .card p {color:#555; line-height:1.7; font-size:16px;}
+
+  form {
+    background:#f0f0f0; padding:30px; border-radius:25px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.1); border:3px dashed #000;
+    position:relative;
+  }
+  form label {display:block; margin-bottom:8px; font-weight:700; color:#000; font-size:16px;}
+  form input, form textarea {
+    width:100%; padding:14px; border-radius:15px; border:2px solid #000;
+    margin-bottom:20px; outline:none; font-size:16px; background:#f0f0f0;
+    transition: all 0.3s ease;
+  }
+  form input:focus, form textarea:focus {
+    border-color:#ff4500;
+    box-shadow:0 0 10px rgba(255,69,0,0.5);
+  }
+  form button {
+    width:100%; padding:15px; border:none; border-radius:25px;
+    background: linear-gradient(90deg, #000, #333);
+    color:#fff; font-size:16px; font-weight:700; cursor:pointer;
+    transition:0.3s; box-shadow:0 4px 10px rgba(0,0,0,0.4);
+  }
+  form button:hover {
+    background: linear-gradient(90deg, #333, #000);
+    transform: scale(1.05);
+  }
+
+  /* رسالة الشكر الكبيرة والمنسقة */
+  .thank-message {
+    position: absolute;
+    top: -140px; right: 0; left: 0;
+    background: linear-gradient(135deg, #fff9c4, #ffe57f); /* ألوان فاتحة متناسقة */
+    border: 3px solid #ffca28;
+    color: #000;
+    padding: 30px 20px;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: all 0.5s ease;
+    z-index: 10;
+  }
+  .thank-message.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  footer {padding:30px; text-align:center; color:#777; font-size:14px;}
+  @media(max-width:768px){.grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <img src="branda.png" alt="BRANDA Logo">
+  </div>
+  <h1>BRANDA</h1>
+  <p>مرحبا بك في الموقع الاحترافي لبراند BRANDA — حيث الاحترافية والإبداع يلتقيان</p>
+</header>
+
+<main>
+  <div class="grid">
+    <div class="card">
+      <h2>قصتنا</h2>
+      <p>براند BRANDA بدأ بفكرة مبتكرة لخلق تجربة فريدة في عالم الموضة والإبداع. هدفنا هو تقديم منتجات وخدمات تجمع بين التصميم العصري والإبداع بحيت نجعل ملابسك بلونين الأبيض و الأسود كالبندا.</p>
+    </div>
+    <div class="card">
+      <h2>مميزاتنا</h2>
+      <p>• واجهة تفاعلية جذابة.<br>• تجربة مستخدم سلسة.<br>• دعم لاقتراحات الزوار مع واجهة رسومية احترافية.<br>• تصميم متوافق مع جميع الأجهزة.</p>
+    </div>
+  </div>
+
+  <section style="margin-top:50px;">
+    <form id="suggestForm">
+      <div class="thank-message" id="thankMessage">🎉 شكراً على اقتراحك! سيتم قراءته قريباً من طرف المطور حمزة الزاهي ♥</div>
+      <label>اسمك (اختياري)</label>
+      <input type="text" id="name" placeholder="ادخل اسمك">
+      <label>اقتراحك</label>
+      <textarea id="suggestion" rows="5" placeholder="اكتب اقتراحك هنا..."></textarea>
+      <button type="submit">إرسال الاقتراح</button>
+    </form>
+  </section>
+</main>
+
+<footer>© 2025 BRANDA - جميع الحقوق محفوظة</footer>
+
+<script>
+document.getElementById('suggestForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim() || 'مجهول';
+  const text = document.getElementById('suggestion').value.trim();
+  if(!text){ 
+    alert('المرجو كتابة اقتراح'); 
+    return; 
+  }
+
+  const msg = document.getElementById('thankMessage');
+  msg.textContent = `🎉 شكراً ${name} على اقتراحك! سيتم قراءته قريباً من طرف المطور حمزة الزاهي ♥`;
+  msg.classList.add('show');
+
+  // مدة ظهور الرسالة متوسطة: 6 ثواني
+  setTimeout(() => { msg.classList.remove('show'); }, 6000);
+
+  document.getElementById('suggestion').value='';
+  document.getElementById('name').value='';
+});
+</script>
+
+</body>
+</html>
